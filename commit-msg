@@ -4,7 +4,7 @@ import sys
 import re
 from subprocess import check_output
 
-NUMS_RE = re.compile(r'\d{1,}')
+NUMS_RE = re.compile(r'/[A-Za-z]+-\d{1,}')
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     if story_num in lines[0]:  # number already there
         return
 
-    lines[0] = lines[0][:-1] + ' [TG-{}]\n'.format(story_num)
+    lines[0] = '{}: '.format(story_num) + lines[0][:]
 
     with open(commit_msg_fn, 'w', encoding='utf-8') as commit_file:
         for line in lines:
