@@ -8,3 +8,11 @@ Example:
 
 If you are working on a feature/ETP-865, or in a hotfix/ETP-865, it will add the
 message prefix "EPT-865:", after do the commit.
+
+## Windows users
+
+Remove the first line of the hook commit-msg and the first \# in the second line.
+
+'''python
+#!C:\Python Files\Python37\pyton.exe
+'''
